@@ -1,0 +1,5 @@
+## generic files to ignore
+*.DS_Store
+/app/bower_components/*
+/app/css/*
+/node_modules/*
