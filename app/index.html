@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="movieApp">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/main.min.css">
+  <title>Terminator Movies Collection List</title>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="dist/angular-movielist.min.js"></script>
+</head>
+<body>
+  <div class="top"> 
+  </div>
+  <div id="moviesList">
+    <h1 class="title">Browse Movies</h1>  
+    <movielist></movielist>
+  </div>
+  <div id="movieView">
+    <div class="view-container">  
+      <div ng-view class="view-frame"></div>
+    </div>
+  </div>
+
+</body>
+</html>

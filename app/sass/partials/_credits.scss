@@ -1,0 +1,63 @@
+
+  /* CSS Movie credits starts*/
+
+  #credits {
+    clear:left;
+    padding-top: 10px;
+    margin-left: 20px;
+    
+  }
+
+  .thumb {
+    width: 174px;
+    height: 262px;
+    overflow: hidden;
+  }
+
+  #credits #creditsTitle {
+    font-weight: bold;
+    font:20px Helvetica;
+  }
+
+  #credits #castNames{
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  #credits #castNames div{
+    cursor: pointer;
+  }
+
+  #credits #castImage{
+    float: left;
+    margin-left:50px;
+    padding-top: 25px;
+    width: 200px;
+    height: 200px;
+
+  }
+
+  #credits div div > .membername {
+    float: left;
+    margin-top: 36px;
+    margin-left: 10px;
+  }
+
+  #credits  div > div.memberimage {
+    margin-top: 10px;
+    clear:left;
+    float:left;
+  }
+
+  #credits  div > div.memberimage img.selected{
+    border:3px solid blue;
+  }
+
+
+  .castMemberImage{
+    width: 347px;
+    height: 420px;
+  }
+
+  /* CSS Movie credits ends*/

@@ -1,0 +1,26 @@
+<div id="description">
+	<h1 id="title" class="space">{{movie.original_title}}</h1>
+	<div class="image">
+		<img ng-src="{{movieImage}}" class="thumb"/>
+	</div>
+	<div id="details">
+		<div>{{movie.overview}}</div>
+	</div>
+</div>
+
+<div id="credits">
+	<h1>Movie Credits: </h1>
+	<h2 id="castNames">
+	        <div ng-repeat="member in credits.cast">
+	        	<div id="{{member.order}}" ng-click="changeImage(member.order)">
+		        	<div class="memberimage"><img ng-class="{ selected: member.order === isSelected }" ng-src="http://image.tmdb.org/t/p/w500{{member.profile_path}}" class="circular"/></div>
+		            <h2 class="membername">{{member.name}}</h2>
+	        	</div>
+	        </div>
+    </h2>
+    <div id="castImage">
+		<img ng-src="{{imgValue}}" class="castMemberImage"/>
+	</div>
+
+</div>
+

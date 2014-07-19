@@ -1,0 +1,80 @@
+/* CSS Movies list start*/
+  
+
+  #moviesList {
+    background-color: #E8E8E8;
+    float:left;
+    width:33%;
+    font:15px Helvetica;
+    font-weight: bold;
+    min-width: 372px;
+    box-shadow: inset -7px 0 9px -7px rgba(0,0,0,0.4);
+    
+  }
+
+  #moviesList > .title {
+    padding-left: 68px;
+  }
+
+  #moviesList > div:nth-child(2n) {
+    clear:right;
+    float: left;
+    padding-left:68px;
+  }
+
+  .movieOuter {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+  }
+
+  .movieInner {
+  width: 100px;
+  }
+
+  #moviesList > div:nth-child(2n) > div {
+    float: right;
+  }
+
+  #moviesList > div:nth-child(2n) > h2 {
+    float:right;
+  }
+
+  #moviesList > div:nth-child(2n+1) {
+    float: right;
+  }
+
+  #moviesList > div:nth-child(2n+1) > div {
+    float: left;
+  }
+
+  #moviesList > div:nth-child(2n+1) > h2 {
+    float:left;
+  }
+
+  a {
+    word-break:keep-all;
+    text-decoration: none;
+  }
+
+  .view-container{
+    float: left;
+    width:66%;
+    min-width: 478px;
+  }
+
+  #intro{
+    padding: 30px;
+  }
+
+  #intro img{
+    width: 100%;
+  }
+
+  #movieView > #title{
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 50px;
+  }
+
+  /* CSS Movies list ends*/
