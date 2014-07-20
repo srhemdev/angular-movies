@@ -26,7 +26,6 @@ var movieControllers = angular.module('movieControllers', ['movieServices']);
 
 movieControllers.controller('MovieListCtrl', ['$scope', '$http', '$routeParams', '$location', 'Movies',
       function ($scope, $http, $routeParams, $location, Movies) {
-       $scope.initMovie = "218";
        if($location.$$path != "undefined")
         $scope.initMovie = ($location.$$path).split("/")[1];
 

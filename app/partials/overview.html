@@ -1,5 +1,11 @@
-<div id="intro">
-    <img class="overviewImg" ng-src="{{movieslistImage}}"/>
-    <h2>{{movieslist.overview}}</h2>
-</div>
 
+
+<div id="description">
+	<h1 id="title" class="space">{{movieslist.name}}</h1>
+	<div class="image">
+		<img ng-src="{{movieslistImage}}" class="thumb"/>
+	</div>
+	<div id="details">
+		<div>{{movieslist.overview}}</div>
+	</div>
+</div>
