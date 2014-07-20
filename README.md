@@ -101,6 +101,7 @@ Clicking on any of the movie will update the Movie Detail View.
                   _credits.css	  --> Styles for Movie Credits
                   _lists.css	  --> Styles for Movies List
                   _details.css	  --> Styles for Movie Details
+                  _overview.css    --> Styles for Collection Overview
                   
       index.html        --> Layout file (the main html template file of the app)
       js/               --> javascript files
