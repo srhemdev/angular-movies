@@ -26,20 +26,23 @@ var movieControllers = angular.module('movieControllers', ['movieServices']);
 
 movieControllers.controller('MovieListCtrl', ['$scope', '$http', '$routeParams', '$location', 'Movies',
       function ($scope, $http, $routeParams, $location, Movies) {
-       if($location.$$path != "undefined")
-        $scope.initMovie = ($location.$$path).split("/")[1];
-
-      console.log($scope.initMovie);
-       $scope.movieslistImage = null;
-        Movies.getMovies().then(function(response){
+         $scope.movieslistImage = null;
+         $scope.isMovieSelected = null;
+         $scope.initMovie = null;
+       Movies.getMovies().then(function(response){
          $scope.movieslist = response.data;
          console.log($scope.movieslist);
          $scope.movieslistImage = "http://image.tmdb.org/t/p/w500/" + $scope.movieslist.poster_path;
         });
-        $scope.isMovieSelected = null;
+
+        if($location.$$path)
+          $scope.initMovie = ($location.$$path).split("/")[1];
+
+        console.log("Path : "+$scope.initMovie);
+        $scope.isMovieSelected = $scope.initMovie;
+        
         $scope.selectMovie= function($index) {
-          $scope.isMovieSelected = $index;
-          console.log("is movie selected", $scope.isMovieSelected);
+            $scope.isMovieSelected = $index;
         };
 }]);
 
