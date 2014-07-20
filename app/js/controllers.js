@@ -24,14 +24,24 @@ var movieControllers = angular.module('movieControllers', ['movieServices']);
  *
  */
 
-movieControllers.controller('MovieListCtrl', ['$scope', '$http', 'Movies',
-      function ($scope, $http, Movies) {
+movieControllers.controller('MovieListCtrl', ['$scope', '$http', '$routeParams', '$location', 'Movies',
+      function ($scope, $http, $routeParams, $location, Movies) {
+       $scope.initMovie = "218";
+       if($location.$$path != "undefined")
+        $scope.initMovie = ($location.$$path).split("/")[1];
+
+      console.log($scope.initMovie);
        $scope.movieslistImage = null;
         Movies.getMovies().then(function(response){
          $scope.movieslist = response.data;
          console.log($scope.movieslist);
          $scope.movieslistImage = "http://image.tmdb.org/t/p/w500/" + $scope.movieslist.poster_path;
         });
+        $scope.isMovieSelected = null;
+        $scope.selectMovie= function($index) {
+          $scope.isMovieSelected = $index;
+          console.log("is movie selected", $scope.isMovieSelected);
+        };
 }]);
 
 /**

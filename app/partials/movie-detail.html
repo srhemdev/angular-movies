@@ -12,9 +12,9 @@
 	<h1>Movie Credits: </h1>
 	<h2 id="castNames">
 	        <div ng-repeat="member in credits.cast">
-	        	<div id="{{member.order}}" ng-click="changeImage(member.order)">
+	        	<div id="{{member.order}}" ng-click="changeImage(member.order)" ng-init="changeImage(0)">
 		        	<div class="memberimage"><img ng-class="{ selected: member.order === isSelected }" ng-src="http://image.tmdb.org/t/p/w500{{member.profile_path}}" class="circular"/></div>
-		            <h2 class="membername">{{member.name}}</h2>
+		            <h2 class="membername" ng-class="{ selected: member.order === isSelected }">{{member.name}}</h2>
 	        	</div>
 	        </div>
     </h2>

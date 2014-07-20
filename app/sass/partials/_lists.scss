@@ -13,7 +13,7 @@
   }
 
   #moviesList > .title {
-    padding-left: 68px;
+    margin-left: 68px;
   }
 
   #moviesList > div:nth-child(2n) {
@@ -30,6 +30,14 @@
 
   .movieInner {
   width: 100px;
+  }
+
+  #moviesList > div h2.selected{
+    color: #1A9DBA;
+  }
+
+  #moviesList > div img.selected{
+    border:3px solid #1A9DBA;
   }
 
   #moviesList > div:nth-child(2n) > div {

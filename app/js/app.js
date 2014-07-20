@@ -31,12 +31,12 @@ var movieApp = angular.module('movieApp', [
 movieApp.directive('movielist', function() {
     return {
            restrict: 'E',
-           template: "<div class='movieOuter' ng-repeat='movieitem in movieslist.parts'>
-                     <a href='#/{{movieitem.id}}'>
-                     <div class='movieInner'><img ng-src='http://image.tmdb.org/t/p/w500{{movieitem.poster_path}}' class='circular'/></div>
-                     <h2 class='movieInner'>{{movieitem.title}}</h2>
-                     </a>
-                     </div>",           
+           template: "<div class='movieOuter' ng-repeat='movieitem in movieslist.parts'>"+
+                     "<a ng-href='#/{{movieitem.id}}' ng-click='selectMovie(movieitem.id)' ng-init='selectMovie(initMovie)'>"+
+                     "<div class='movieInner'><img ng-src='http://image.tmdb.org/t/p/w500{{movieitem.poster_path}}' ng-class='{ selected: movieitem.id == isMovieSelected }' class='circular'/></div>"+
+                     "<h2 class='movieInner' ng-class='{ selected: movieitem.id == isMovieSelected }'>{{movieitem.title}}</h2>"+
+                     "</a>"+
+                     "</div>",           
            replace: true,
            controller: 'MovieListCtrl'
             }

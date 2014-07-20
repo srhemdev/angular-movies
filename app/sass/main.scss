@@ -1,12 +1,13 @@
 @import 'partials/credits';
 @import 'partials/lists';
 @import 'partials/details';
+@import 'partials/overview';
 
 body {
     min-width: 1100px;
     font-size:14px;
     color:#484949;
-    line-height: 18px;
+    
     margin: 0px;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
   Helvetica, Arial, "Lucida Grande", sans-serif;

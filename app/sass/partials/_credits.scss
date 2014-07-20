@@ -51,9 +51,12 @@
   }
 
   #credits  div > div.memberimage img.selected{
-    border:3px solid blue;
+    border:3px solid #1A9DBA;
   }
 
+  #credits  div > h2.membername.selected{
+    color: #1A9DBA;
+  }
 
   .castMemberImage{
     width: 347px;

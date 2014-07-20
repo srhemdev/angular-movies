@@ -31,12 +31,12 @@ var movieApp = angular.module('movieApp', [
 movieApp.directive('movielist', function() {
     return {
            restrict: 'E',
-           template: "<div class='movieOuter' ng-repeat='movieitem in movieslist.parts'>
-                     <a href='#/{{movieitem.id}}'>
-                     <div class='movieInner'><img ng-src='http://image.tmdb.org/t/p/w500{{movieitem.poster_path}}' class='circular'/></div>
-                     <h2 class='movieInner'>{{movieitem.title}}</h2>
-                     </a>
-                     </div>",           
+           template: "<div class='movieOuter' ng-repeat='movieitem in movieslist.parts'>"+
+                     "<a ng-href='#/{{movieitem.id}}' ng-click='selectMovie(movieitem.id)' ng-init='selectMovie(initMovie)'>"+
+                     "<div class='movieInner'><img ng-src='http://image.tmdb.org/t/p/w500{{movieitem.poster_path}}' ng-class='{ selected: movieitem.id == isMovieSelected }' class='circular'/></div>"+
+                     "<h2 class='movieInner' ng-class='{ selected: movieitem.id == isMovieSelected }'>{{movieitem.title}}</h2>"+
+                     "</a>"+
+                     "</div>",           
            replace: true,
            controller: 'MovieListCtrl'
             }
@@ -83,14 +83,24 @@ var movieControllers = angular.module('movieControllers', ['movieServices']);
  *
  */
 
-movieControllers.controller('MovieListCtrl', ['$scope', '$http', 'Movies',
-      function ($scope, $http, Movies) {
+movieControllers.controller('MovieListCtrl', ['$scope', '$http', '$routeParams', '$location', 'Movies',
+      function ($scope, $http, $routeParams, $location, Movies) {
+       $scope.initMovie = "218";
+       if($location.$$path != "undefined")
+        $scope.initMovie = ($location.$$path).split("/")[1];
+
+      console.log($scope.initMovie);
        $scope.movieslistImage = null;
         Movies.getMovies().then(function(response){
          $scope.movieslist = response.data;
          console.log($scope.movieslist);
          $scope.movieslistImage = "http://image.tmdb.org/t/p/w500/" + $scope.movieslist.poster_path;
         });
+        $scope.isMovieSelected = null;
+        $scope.selectMovie= function($index) {
+          $scope.isMovieSelected = $index;
+          console.log("is movie selected", $scope.isMovieSelected);
+        };
 }]);
 
 /**
